@@ -15,10 +15,8 @@ const TodoItem = () => {
         value={name}
         onChange={handleChange}
       />
-      <button className="delete-btn">delete</button>
-      <button className="check-btn" type="checkbox">
-        check
-      </button>
+      <button className="delete-btn"></button>
+      <button className="check-btn" type="checkbox"></button>
     </section>
   );
 };
