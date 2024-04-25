@@ -1,10 +1,10 @@
 import { useState } from "react";
 
 const TodoItem = () => {
-  const [name, setName] = useState("");
+  const [todoValue, setTodoValue] = useState("");
 
   function handleChange(event) {
-    setName(event.target.value);
+    setTodoValue(event.target.value);
   }
   return (
     <section className="todo-item">
@@ -12,7 +12,7 @@ const TodoItem = () => {
         className="todo-input"
         type="text"
         placeholder="add a todo"
-        value={name}
+        value={todoValue}
         onChange={handleChange}
       />
       <button className="delete-btn"></button>
