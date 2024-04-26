@@ -8,7 +8,7 @@ export const useThemeToggle = () => {
   };
 
   useEffect(() => {
-    const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: light)");
+    const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
     setTheme(prefersDarkScheme.matches ? "dark" : "light");
     prefersDarkScheme.addEventListener("change", toggleTheme);
     return () => {

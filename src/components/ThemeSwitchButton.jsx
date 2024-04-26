@@ -6,7 +6,7 @@ export const ThemeSwitchButton = () => {
 
   return (
     <>
-      <input onClick={toggleTheme} type="checkbox" id="darkmode-toggle" />
+      <input onClick={toggleTheme} type="checkbox" id="darkmode-toggle" checked={theme === "dark"} />
 
       <label id="dm-toggle" htmlFor="darkmode-toggle">
         {theme === "light" ? (
