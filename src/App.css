@@ -21,7 +21,8 @@
   font-size: 1rem;
   padding: 0.25rem;
   margin: 0.2rem;
-  opacity: 0.8;
+  opacity: 0.9;
+  /* font-weight: bold; */
 }
 .delete-btn,
 .check-btn {
@@ -37,13 +38,23 @@
   border: none;
   background-image: url("assets/trash-can-regular.svg");
   background-repeat: no-repeat;
-  font-weight: bold;
+  /* font-weight: bold; */
+  opacity: 20%;
 }
 .check-btn {
   background-image: url("assets/circle-check-regular.svg");
   background-repeat: no-repeat;
   font-weight: bold;
 }
+
+.check-btn.done {
+  background-image: url("assets/circle-check-solid.svg");
+  opacity: 40%;
+}
+.delete-btn.done {
+  opacity: 60%;
+}
+
 /* Header Styles */
 
 header {
@@ -71,6 +82,7 @@ header input[type="text"] {
   width: 100%;
   margin-bottom: 10px;
   background-color: #f0f0f0;
+  color: black;
 }
 
 header button[type="submit"] {

@@ -1,6 +1,6 @@
 import "./App.css";
 import "./index.css";
-import React, { useState } from "react";
+import { useState } from "react";
 import Header from "./components/Header";
 import TodoList from "./components/TodoList";
 
@@ -23,11 +23,7 @@ const App = () => {
   };
 
   const toggleDone = (todoId) => {
-    setTodos(
-      todos.map((todo) =>
-        todo.id === todoId ? { ...todo, checked: !todo.checked } : todo
-      )
-    );
+    setTodos(todos.map((todo) => (todo.id === todoId ? { ...todo, checked: !todo.checked } : todo)));
   };
 
   return (
