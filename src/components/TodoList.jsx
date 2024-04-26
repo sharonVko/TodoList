@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
-import TodoItem from './TodoItem';
+import { useState } from "react";
+import TodoItem from "./TodoItem";
 
 const TodoList = ({ todos, onDelete, onToggleDone }) => {
-  const [filter, setFilter] = useState('all'); // 'all', 'done', 'pending'
+  const [filter, setFilter] = useState("all"); // 'all', 'done', 'pending'
 
   const filteredTodos = () => {
     switch (filter) {
-      case 'all':
+      case "all":
         return todos;
-      case 'done':
+      case "done":
         return todos.filter((todo) => todo.checked);
-      case 'pending':
+      case "pending":
         return todos.filter((todo) => !todo.checked);
       default:
         return todos;
@@ -24,18 +24,13 @@ const TodoList = ({ todos, onDelete, onToggleDone }) => {
   return (
     <div className="todo-list">
       <div className="filters">
-        <button onClick={() => handleFilterChange('all')}>Alle</button>
-        <button onClick={() => handleFilterChange('done')}>Erledigt</button>
-        <button onClick={() => handleFilterChange('pending')}>Ausstehend</button>
+        <button onClick={() => handleFilterChange("all")}>Alle</button>
+        <button onClick={() => handleFilterChange("done")}>Erledigt</button>
+        <button onClick={() => handleFilterChange("pending")}>Ausstehend</button>
       </div>
       <ul>
         {filteredTodos().map((todo) => (
-          <TodoItem
-            key={todo.id}
-            todo={todo}
-            onDelete={() => onDelete(todo.id)}
-            onToggleDone={() => onToggleDone(todo.id)}
-          />
+          <TodoItem key={todo.id} todo={todo} onDelete={() => onDelete(todo.id)} onToggleDone={() => onToggleDone(todo.id)} />
         ))}
       </ul>
     </div>
