@@ -1,13 +1,14 @@
+import "./App.css";
 import "./index.css";
-import React, { useState } from 'react';
-import Header from './components/Header';
-import TodoList from './components/TodoList';
+import React, { useState } from "react";
+import Header from "./components/Header";
+import TodoList from "./components/TodoList";
 
 const App = () => {
   const [todos, setTodos] = useState([]);
 
   const addTodo = (newTodoText) => {
-    if (newTodoText.trim() === '') return; // Ignore empty inputs
+    if (newTodoText.trim() === "") return; // Ignore empty inputs
 
     const newTodo = {
       id: todos.length + 1,

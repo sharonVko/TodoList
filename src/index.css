@@ -55,7 +55,7 @@ header button[type="submit"] {
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: #fff;
   cursor: pointer;
 }
@@ -85,10 +85,10 @@ header button[type="submit"]:hover {
   border-bottom: none;
 }
 
-.todo-item {
+/* .todo-item {
   display: flex;
   align-items: center;
-}
+} */
 
 .todo-item input[type="checkbox"] {
   margin-right: 10px;
@@ -98,7 +98,7 @@ header button[type="submit"]:hover {
   flex: 1;
 }
 
-.todo-item.delete-btn {
+/* .todo-item.delete-btn {
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -109,7 +109,7 @@ header button[type="submit"]:hover {
 
 .todo-item.delete-btn:hover {
   background-color: #c0392b;
-}
+} */
 
 .todo-item.done {
   text-decoration: line-through;
@@ -126,7 +126,7 @@ header button[type="submit"]:hover {
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: #fff;
   cursor: pointer;
   margin-right: 10px;
