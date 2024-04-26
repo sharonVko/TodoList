@@ -3,6 +3,7 @@ import "./index.css";
 import { useState, useEffect } from "react";
 import Header from "./components/Header";
 import TodoList from "./components/TodoList";
+import { ThemeSwitchButton } from "./components/ThemeSwitchButton";
 
 const App = () => {
   const [todos, setTodos] = useState(() => {
@@ -31,11 +32,7 @@ const App = () => {
   };
 
   const toggleDone = (todoId) => {
-    setTodos(
-      todos.map((todo) =>
-        todo.id === todoId ? { ...todo, checked: !todo.checked } : todo
-      )
-    );
+    setTodos(todos.map((todo) => (todo.id === todoId ? { ...todo, checked: !todo.checked } : todo)));
   };
 
   const clearList = () => {
@@ -51,6 +48,7 @@ const App = () => {
           Liste löschen
         </button>
       )}
+      <ThemeSwitchButton />
     </div>
   );
 };

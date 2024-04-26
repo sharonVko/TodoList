@@ -14,12 +14,7 @@ const Header = ({ onAddTodo }) => {
   return (
     <header>
       <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Neues Todo eingeben"
-          value={newTodoText}
-          onChange={(e) => setNewTodoText(e.target.value)}
-        />
+        <input type="text" placeholder="Neues Todo eingeben" value={newTodoText} onChange={(e) => setNewTodoText(e.target.value)} />
         <button type="submit">Hinzufügen</button>
       </form>
     </header>

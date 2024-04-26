@@ -1,0 +1,85 @@
+.sun {
+  enable-background: new 0 0 496 496;
+}
+
+.moon {
+  enable-background: new 0 0 49.739 49.739;
+}
+
+#dm-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+
+  width: 125px;
+  height: 50px;
+  display: block;
+  background: #ebebeb;
+  border-radius: 50px;
+  box-shadow: inset 0px 1.25px 3.75px rgba(0, 0, 0, 0.4), inset 0px -1.25px 3.75px rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: 0.3s;
+  user-select: none;
+}
+#dm-toggle:after {
+  content: "";
+  width: 45px;
+  height: 45px;
+  position: absolute;
+  top: 2.5px;
+  left: 2.5px;
+  background: linear-gradient(180deg, #ffcc89, #d8860b);
+  border-radius: 45px;
+  box-shadow: 0px 1.25px 2.5px rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+}
+#darkmode-toggle {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+#darkmode-toggle:checked + #dm-toggle {
+  background: #242424;
+}
+#darkmode-toggle:checked + #dm-toggle:after {
+  left: 122.5px;
+  transform: translateX(-100%);
+  background: linear-gradient(180deg, #777, #3a3a3a);
+}
+#dm-toggle:active:after {
+  width: 65px;
+}
+/* .background {
+  width: 25vw;
+  height: 25vh;
+  background: #fff;
+  z-index: -1;
+  position: absolute;
+  transition: 0.3s;
+} */
+#darkmode-toggle:checked + #dm-toggle {
+  background: #242424;
+}
+
+#dm-toggle svg {
+  position: absolute;
+  width: 30px;
+  top: 10px;
+  z-index: 100;
+}
+#dm-toggle svg.sun {
+  left: 10px;
+  fill: #fff;
+  transition: 0.3s;
+}
+#dm-toggle svg.moon {
+  left: 85px;
+  fill: #7e7e7e;
+  transition: 0.3s;
+}
+#darkmode-toggle:checked + #dm-toggle svg.sun {
+  fill: #7e7e7e;
+}
+#darkmode-toggle:checked + #dm-toggle svg.moon {
+  fill: #fff;
+}
