@@ -38,7 +38,6 @@
   border: none;
   background-image: url("assets/trash-can-regular.svg");
   background-repeat: no-repeat;
-  /* font-weight: bold; */
   opacity: 20%;
 }
 .check-btn {
@@ -54,41 +53,40 @@
 .delete-btn.done {
   opacity: 60%;
 }
-
+.checkbox-animate:has(.todo-item.done) {
+  margin-top: 3rem;
+}
+.checkbox-animate:has(.todo-item.done)
+  ~ .checkbox-animate:has(.todo-item.done) {
+  margin-top: 0.5rem;
+}
 /* Header Styles */
 
 header {
   background-color: #333;
   color: #fff;
-  padding: 10px;
+  padding: 1rem;
   text-align: center;
-}
-
-header h1 {
-  margin: 0;
+  border-radius: 5px;
 }
 
 header form {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-top: 20px;
 }
 
 header input[type="text"] {
   padding: 10px;
   border: none;
-  border-radius: 5px;
+  border-radius: 5px 0 0 5px;
   width: 100%;
-  margin-bottom: 10px;
   background-color: #f0f0f0;
   color: black;
 }
 
 header button[type="submit"] {
-  padding: 10px 20px;
+  padding: 1px 20px;
   border: none;
-  border-radius: 5px;
+  border-radius: 0 5px 5px 0;
   background-color: #4caf50;
   color: #fff;
   cursor: pointer;
@@ -108,15 +106,13 @@ header button[type="submit"]:hover {
   list-style: none;
   padding: 0;
   margin: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .todo-list li {
   padding: 10px;
   border-bottom: 1px solid #ccc;
-}
-
-.todo-list li:last-child {
-  border-bottom: none;
 }
 
 /* .todo-item {
@@ -131,8 +127,11 @@ header button[type="submit"]:hover {
 .todo-item.todo-text {
   flex: 1;
 }
+.checkbox-animate:has(.todo-item.done) {
+  order: 1;
+}
 
-.todo-item.done {
+.todo-item.done input {
   text-decoration: line-through;
   color: #999;
 }
@@ -143,7 +142,8 @@ header button[type="submit"]:hover {
   margin-bottom: 20px;
 }
 
-.filters button {
+.filters button,
+.clear-btn {
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
@@ -152,7 +152,9 @@ header button[type="submit"]:hover {
   cursor: pointer;
   margin-right: 10px;
 }
-
+.clear-btn {
+  margin-top: 20px;
+}
 .filters button:hover {
   background-color: #3e8e41;
 }

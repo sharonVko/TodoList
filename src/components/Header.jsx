@@ -13,9 +13,13 @@ const Header = ({ onAddTodo }) => {
 
   return (
     <header>
-      <h1>Meine Todo-App</h1>
       <form onSubmit={handleSubmit}>
-        <input type="text" placeholder="Neues Todo eingeben" value={newTodoText} onChange={(e) => setNewTodoText(e.target.value)} />
+        <input
+          type="text"
+          placeholder="Neues Todo eingeben"
+          value={newTodoText}
+          onChange={(e) => setNewTodoText(e.target.value)}
+        />
         <button type="submit">Hinzufügen</button>
       </form>
     </header>
