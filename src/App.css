@@ -33,6 +33,8 @@
   cursor: pointer;
 }
 .delete-btn {
+  background-color: #fff;
+  border: none;
   background-image: url("assets/trash-can-regular.svg");
   background-repeat: no-repeat;
   font-weight: bold;
@@ -41,4 +43,108 @@
   background-image: url("assets/circle-check-regular.svg");
   background-repeat: no-repeat;
   font-weight: bold;
+}
+/* Header Styles */
+
+header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+}
+
+header form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+header input[type="text"] {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  margin-bottom: 10px;
+  background-color: #f0f0f0;
+}
+
+header button[type="submit"] {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4caf50;
+  color: #fff;
+  cursor: pointer;
+}
+
+header button[type="submit"]:hover {
+  background-color: #3e8e41;
+}
+
+/* TodoList Styles */
+
+.todo-list {
+  margin-top: 20px;
+}
+
+.todo-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.todo-list li {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.todo-list li:last-child {
+  border-bottom: none;
+}
+
+/* .todo-item {
+  display: flex;
+  align-items: center;
+} */
+
+.todo-item input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.todo-item.todo-text {
+  flex: 1;
+}
+
+.todo-item.done {
+  text-decoration: line-through;
+  color: #999;
+}
+
+/* Filter Button  */
+
+.filters {
+  margin-bottom: 20px;
+}
+
+.filters button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4caf50;
+  color: #fff;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.filters button:hover {
+  background-color: #3e8e41;
+}
+
+.filters button.active {
+  background-color: #3e8e41;
 }
