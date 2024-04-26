@@ -23,7 +23,11 @@ const App = () => {
   };
 
   const toggleDone = (todoId) => {
-    setTodos(todos.map((todo) => (todo.id === todoId ? { ...todo, checked: !todo.checked } : todo)));
+    setTodos(
+      todos.map((todo) =>
+        todo.id === todoId ? { ...todo, checked: !todo.checked } : todo
+      )
+    );
   };
 
   return (
