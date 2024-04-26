@@ -1,23 +1,24 @@
-import { useState } from "react";
+import React, { useState } from 'react';
 
-const TodoItem = () => {
-  const [todoValue, setTodoValue] = useState("");
+const TodoItem = ({ todo, onDelete, onToggleDone }) => {
+  const [isChecked, setIsChecked] = useState(todo.checked);
 
-  function handleChange(event) {
-    setTodoValue(event.target.value);
-  }
+  const handleToggleDone = () => {
+    setIsChecked(!isChecked);
+    onToggleDone(todo.id); // Pass the todo ID to the parent component
+  };
+
   return (
-    <section className="todo-item">
+    <li className={`todo-item ${isChecked ? 'done' : ''}`}>
       <input
-        className="todo-input"
-        type="text"
-        placeholder="add a todo"
-        value={todoValue}
-        onChange={handleChange}
+        type="checkbox"
+        checked={isChecked}
+        onChange={handleToggleDone}
       />
-      <button className="delete-btn"></button>
-      <button className="check-btn" type="checkbox"></button>
-    </section>
+      <span className="todo-text">{todo.value}</span>
+      <button className="delete-btn" onClick={() => onDelete(todo.id)}>Löschen</button>
+    </li>
   );
 };
+
 export default TodoItem;

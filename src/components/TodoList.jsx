@@ -1,30 +1,45 @@
-import TodoItem from "./TodoItem";
-import { useState } from "react";
+import React, { useState } from 'react';
+import TodoItem from './TodoItem';
 
-/*[{ id: 1 }, { id: 2 }, { id: 3 }];*/
-//mit useState Anzeige todos aktualisieren
-const TodoList = () => {
-  const [todos, setTodos] = useState([]);
+const TodoList = ({ todos, onDelete, onToggleDone }) => {
+  const [filter, setFilter] = useState('all'); // 'all', 'done', 'pending'
+
+  const filteredTodos = () => {
+    switch (filter) {
+      case 'all':
+        return todos;
+      case 'done':
+        return todos.filter((todo) => todo.checked);
+      case 'pending':
+        return todos.filter((todo) => !todo.checked);
+      default:
+        return todos;
+    }
+  };
+
+  const handleFilterChange = (newFilter) => {
+    setFilter(newFilter);
+  };
+
   return (
-    <>
-      <h1 className="text-3xl font-bold">fancy todo list</h1>
-      <button
-        onClick={() => {
-          const newTodo = {
-            id: todos.length + 1,
-            value: "test",
-            checked: false,
-          };
-          setTodos([...todos, newTodo]);
-        }}
-      >
-        click
-      </button>
-
-      {todos.map((todo) => (
-        <TodoItem key={todo.id} />
-      ))}
-    </>
+    <div className="todo-list">
+      <div className="filters">
+        <button onClick={() => handleFilterChange('all')}>Alle</button>
+        <button onClick={() => handleFilterChange('done')}>Erledigt</button>
+        <button onClick={() => handleFilterChange('pending')}>Ausstehend</button>
+      </div>
+      <ul>
+        {filteredTodos().map((todo) => (
+          <TodoItem
+            key={todo.id}
+            todo={todo}
+            onDelete={() => onDelete(todo.id)}
+            onToggleDone={() => onToggleDone(todo.id)}
+          />
+        ))}
+      </ul>
+    </div>
   );
 };
+
 export default TodoList;
