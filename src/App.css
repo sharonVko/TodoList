@@ -120,19 +120,6 @@ header button[type="submit"]:hover {
   flex: 1;
 }
 
-/* .todo-item.delete-btn {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  background-color: #e74c3c;
-  color: #fff;
-  cursor: pointer;
-}
-
-.todo-item.delete-btn:hover {
-  background-color: #c0392b;
-} */
-
 .todo-item.done {
   text-decoration: line-through;
   color: #999;

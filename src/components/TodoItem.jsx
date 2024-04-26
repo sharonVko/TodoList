@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 const TodoItem = ({ todo, onDelete, onToggleDone }) => {
   const [isChecked, setIsChecked] = useState(todo.checked);
+  const [editTodo, setEditTodo] = useState(todo.value);
 
   const handleToggleDone = () => {
     setIsChecked(!isChecked);
@@ -16,7 +17,11 @@ const TodoItem = ({ todo, onDelete, onToggleDone }) => {
         checked={isChecked}
         onChange={handleToggleDone}
       />
-      <input className="todo-text todo-input" value={todo.value} />
+      <input
+        className="todo-text todo-input"
+        value={editTodo}
+        onChange={(e) => setEditTodo(e.target.value)}
+      />
       <button className="delete-btn" onClick={() => onDelete(todo.id)}></button>
     </li>
   );

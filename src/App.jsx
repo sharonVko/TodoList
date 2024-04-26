@@ -15,7 +15,7 @@ const App = () => {
       value: newTodoText,
       checked: false,
     };
-    setTodos([...todos, newTodo]);
+    setTodos([newTodo, ...todos]);
   };
 
   const deleteTodo = (todoId) => {
