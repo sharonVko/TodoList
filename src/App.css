@@ -62,6 +62,10 @@
 }
 /* Header Styles */
 
+.App {
+  border-radius: 0.5rem;
+}
+
 header {
   background-color: #333;
   color: #fff;
