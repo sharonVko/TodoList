@@ -53,10 +53,11 @@
 .delete-btn.done {
   opacity: 60%;
 }
-ul > .todo-item.done {
+.checkbox-animate:has(.todo-item.done) {
   margin-top: 3rem;
 }
-ul > .todo-item.done ~ .todo-item.done {
+.checkbox-animate:has(.todo-item.done)
+  ~ .checkbox-animate:has(.todo-item.done) {
   margin-top: 0.5rem;
 }
 /* Header Styles */
@@ -133,7 +134,7 @@ header button[type="submit"]:hover {
 .todo-item.todo-text {
   flex: 1;
 }
-.todo-item.done {
+.checkbox-animate:has(.todo-item.done) {
   order: 1;
 }
 
