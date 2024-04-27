@@ -11,26 +11,26 @@
   top: 1rem;
   right: 1rem;
 
-  width: 125px;
-  height: 50px;
+  width: 93.75px; /* 125px * 0.75 */
+  height: 37.5px; /* 50px * 0.75 */
   display: block;
   background: #ebebeb;
-  border-radius: 50px;
-  box-shadow: inset 0px 1.25px 3.75px rgba(0, 0, 0, 0.4), inset 0px -1.25px 3.75px rgba(255, 255, 255, 0.4);
+  border-radius: 37.5px; /* 50px * 0.75 */
+  box-shadow: inset 0px 0.9375px 2.8125px rgba(0, 0, 0, 0.4), inset 0px -0.9375px 2.8125px rgba(255, 255, 255, 0.4);
   cursor: pointer;
   transition: 0.3s;
   user-select: none;
 }
 #dm-toggle:after {
   content: "";
-  width: 45px;
-  height: 45px;
+  width: 33.75px; /* 45px * 0.75 */
+  height: 33.75px; /* 45px * 0.75 */
   position: absolute;
-  top: 2.5px;
-  left: 2.5px;
+  top: 1.875px; /* 2.5px * 0.75 */
+  left: 1.875px; /* 2.5px * 0.75 */
   background: linear-gradient(180deg, #ffcc89, #d8860b);
-  border-radius: 45px;
-  box-shadow: 0px 1.25px 2.5px rgba(0, 0, 0, 0.2);
+  border-radius: 33.75px; /* 45px * 0.75 */
+  box-shadow: 0px 0.9375px 1.875px rgba(0, 0, 0, 0.2);
   transition: 0.3s;
 }
 #darkmode-toggle {
@@ -42,38 +42,29 @@
   background: #242424;
 }
 #darkmode-toggle:checked + #dm-toggle:after {
-  left: 122.5px;
+  left: 92.1875px; /* 122.5px * 0.75 */
   transform: translateX(-100%);
   background: linear-gradient(180deg, #777, #3a3a3a);
 }
 #dm-toggle:active:after {
-  width: 65px;
+  width: 48.75px; /* 65px * 0.75 */
 }
-/* .background {
-  width: 25vw;
-  height: 25vh;
-  background: #fff;
-  z-index: -1;
-  position: absolute;
-  transition: 0.3s;
-} */
 #darkmode-toggle:checked + #dm-toggle {
   background: #242424;
 }
-
 #dm-toggle svg {
   position: absolute;
-  width: 30px;
-  top: 10px;
+  width: 22.5px; /* 30px * 0.75 */
+  top: 7.5px; /* 10px * 0.75 */
   z-index: 100;
 }
 #dm-toggle svg.sun {
-  left: 10px;
+  left: 7.5px; /* 10px * 0.75 */
   fill: #fff;
   transition: 0.3s;
 }
 #dm-toggle svg.moon {
-  left: 85px;
+  left: 63.75px; /* 85px * 0.75 */
   fill: #7e7e7e;
   transition: 0.3s;
 }
