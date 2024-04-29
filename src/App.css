@@ -3,6 +3,7 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 .todo-item {
   display: flex;
@@ -56,11 +57,14 @@
 .checkbox-animate:has(.todo-item.done) {
   margin-top: 3rem;
 }
-.checkbox-animate:has(.todo-item.done)
-  ~ .checkbox-animate:has(.todo-item.done) {
+.checkbox-animate:has(.todo-item.done) ~ .checkbox-animate:has(.todo-item.done) {
   margin-top: 0.5rem;
 }
 /* Header Styles */
+
+.App {
+  border-radius: 0.5rem;
+}
 
 header {
   background-color: #333;
@@ -163,16 +167,16 @@ header button[type="submit"]:hover {
   background-color: #3e8e41;
 }
 
-/* TEST; TEST */
-.checkbox-animate {
-  /* display: flex; */
-  /* justify-content: center; */
-  /* align-items: center; */
-  /* width: 100%; */
-  /* height: 100vh; */
-  /* font-family: arial; */
-  /* font-size: 25px; */
-}
+/* Checkboxes and animation */
+/* .checkbox-animate { */
+/* display: flex; */
+/* justify-content: center; */
+/* align-items: center; */
+/* width: 100%; */
+/* height: 100vh; */
+/* font-family: arial; */
+/* font-size: 25px; */
+/* } */
 .checkbox-animate label {
   /* position: relative; */
   cursor: pointer;
@@ -256,4 +260,99 @@ header button[type="submit"]:hover {
   100% {
     transform: scale(1) rotate(-45deg);
   }
+}
+
+/* BATMAN MODE /  Dark Mode */
+body.dark {
+  background-color: #1a202c;
+  color: #fff;
+}
+
+body.dark #root {
+  background-color: #1a202c;
+}
+
+body.dark .todo-item {
+  background-color: #2d3748;
+  border-color: #4a5568;
+  -webkit-box-shadow: 5px 5px 10px -4px rgba(255, 255, 255, 0.25);
+  box-shadow: 5px 5px 10px -4px rgba(255, 255, 255, 0.25);
+}
+
+body.dark .todo-input {
+  background-color: #2d3748;
+  color: #fff;
+}
+
+body.dark .delete-btn {
+  background-color: #2d3748;
+  opacity: 40%;
+}
+
+body.dark .check-btn {
+  opacity: 100%;
+}
+
+body.dark .check-btn.done {
+  opacity: 80%;
+}
+
+body.dark .delete-btn.done {
+  opacity: 50%;
+}
+
+body.dark header {
+  background-color: #4a5568;
+}
+
+body.dark header h1 {
+  color: #fff;
+}
+
+body.dark header input[type="text"] {
+  background-color: #2d3748;
+  color: #fff;
+}
+
+body.dark header button[type="submit"] {
+  background-color: #38a169;
+}
+
+body.dark .todo-list li {
+  border-bottom-color: #4a5568;
+}
+
+body.dark .filters button {
+  background-color: #38a169;
+}
+
+body.dark .filters button.active {
+  background-color: #38a169;
+}
+
+body.dark .checkbox-animate {
+  color: #fff;
+}
+
+body.dark .input-check {
+  border-color: #ccc;
+}
+
+body.dark .input-check::before {
+  border-color: #fff;
+}
+
+.todo-list {
+  background-color: white;
+  color: black;
+}
+
+body.dark .todo-list {
+  background-color: #2d3748;
+  color: #fff;
+}
+
+body.dark .App {
+  background-color: #2d3748;
+  color: black;
 }

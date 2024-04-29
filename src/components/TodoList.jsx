@@ -27,18 +27,11 @@ const TodoList = ({ todos, onDelete, onToggleDone }) => {
         <div className="filters">
           <button onClick={() => handleFilterChange("all")}>Alle</button>
           <button onClick={() => handleFilterChange("done")}>Erledigt</button>
-          <button onClick={() => handleFilterChange("pending")}>
-            Ausstehend
-          </button>
+          <button onClick={() => handleFilterChange("pending")}>Ausstehend</button>
         </div>
         <ul>
           {filteredTodos().map((todo) => (
-            <TodoItem
-              key={todo.id}
-              todo={todo}
-              onDelete={() => onDelete(todo.id)}
-              onToggleDone={() => onToggleDone(todo.id)}
-            />
+            <TodoItem key={todo.id} todo={todo} onDelete={() => onDelete(todo.id)} onToggleDone={() => onToggleDone(todo.id)} />
           ))}
         </ul>
       </div>
