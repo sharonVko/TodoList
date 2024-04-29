@@ -15,7 +15,7 @@ export const useThemeToggle = () => {
   };
 
   useEffect(() => {
-    // Check if the user's preferred color scheme is dark
+    // Check if the user's preferred color theme is dark
     const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)");
     setTheme(prefersDarkScheme.matches ? "dark" : "light");
 
