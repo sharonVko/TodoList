@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Header from "./components/Header";
 import TodoList from "./components/TodoList";
 import { ThemeSwitchButton } from "./components/ThemeSwitchButton";
+import { v4 as uuidv4 } from "uuid";
 
 const App = () => {
   const [todos, setTodos] = useState(() => {
@@ -15,7 +16,7 @@ const App = () => {
     if (newTodoText.trim() === "") return; // Ignore empty inputs
 
     const newTodo = {
-      id: todos.length + 1,
+      id: uuidv4(),
       value: newTodoText,
       checked: false,
     };
