@@ -34,6 +34,7 @@
   background-position: center;
   cursor: pointer;
 }
+
 .delete-btn {
   background-color: #fff;
   border: none;
@@ -159,6 +160,10 @@ header button[type="submit"]:hover {
 .clear-btn {
   margin-top: 20px;
 }
+
+body.dark .clear-btn {
+  background-color: #38a169;
+}
 .filters button:hover {
   background-color: #3e8e41;
 }
@@ -221,6 +226,11 @@ header button[type="submit"]:hover {
   border-color: #4caf50;
   animation-name: input-animate;
   animation-duration: 0.7s;
+}
+
+body.dark .checkbox-animate label input:checked ~ .input-check {
+  background-color: #38a169;
+  border-color: #38a169;
 }
 
 .checkbox-animate label input:checked ~ .input-check::before {
