@@ -6,7 +6,8 @@ export const ThemeSwitchButton = () => {
 
   return (
     <>
-      <input onClick={toggleTheme} type="checkbox" id="darkmode-toggle" checked={theme === "dark"} />
+      {/* Changed from onClick → onChange due to an Error. There is a 'checked' prop, but the 'onChange' handler was missing */}
+      <input onChange={toggleTheme} type="checkbox" id="darkmode-toggle" checked={theme === "dark"} />
 
       <label id="dm-toggle" htmlFor="darkmode-toggle">
         {theme === "light" ? (

@@ -8,7 +8,7 @@ import { ThemeSwitchButton } from "./components/ThemeSwitchButton";
 const App = () => {
   const [todos, setTodos] = useState(() => {
     const savedTodos = localStorage.getItem("todos");
-    return JSON.parse(savedTodos) || "";
+    return JSON.parse(savedTodos) || [];
   });
 
   const addTodo = (newTodoText) => {
